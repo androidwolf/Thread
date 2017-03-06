@@ -25,7 +25,7 @@ public class ThreadPoolTest implements Runnable {
 		BlockingQueue<Runnable> queue = new ArrayBlockingQueue<Runnable>(5);
 		ThreadPoolExecutor executor = new ThreadPoolExecutor(3, 6, 1,
 				TimeUnit.DAYS, queue);
-		for (int i = 0; i < 12; i++) {
+		for (int i = 0; i < 11; i++) {
 			executor.execute(new Thread(new ThreadPoolTest(), "TestThread"
 					.concat("" + i)));
 			int threadSize = queue.size();
