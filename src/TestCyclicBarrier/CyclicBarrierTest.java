@@ -19,6 +19,10 @@ public class CyclicBarrierTest {
 		executor.submit(new Thread(new Runner(barrier, "1号选手")));
 		executor.submit(new Thread(new Runner(barrier, "2号选手")));
 		executor.submit(new Thread(new Runner(barrier, "3号选手")));
+		
+		executor.submit(new Thread(new Runner(barrier, "4号选手")));
+		executor.submit(new Thread(new Runner(barrier, "5号选手")));
+		executor.submit(new Thread(new Runner(barrier, "6号选手")));
 
 		executor.shutdown();
 	}
@@ -27,7 +31,6 @@ public class CyclicBarrierTest {
 class Runner implements Runnable {
 	// 一个同步辅助类，它允许一组线程互相等待，直到到达某个公共屏障点 (common barrier point)
 	private CyclicBarrier barrier;
-
 	private String name;
 
 	public Runner(CyclicBarrier barrier, String name) {
@@ -35,7 +38,6 @@ class Runner implements Runnable {
 		this.barrier = barrier;
 		this.name = name;
 	}
-
 	@Override
 	public void run() {
 		try {
