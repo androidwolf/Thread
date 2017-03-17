@@ -3,7 +3,7 @@ package Thread.UncaughtExceptionHandler;
 import java.lang.Thread.UncaughtExceptionHandler;
 
 /**
- * 实现UncaughtExceptionHandler接口，抓住抛出的异常
+ * UncaughtExceptionHandler
  * @author yxx
  *
  */
